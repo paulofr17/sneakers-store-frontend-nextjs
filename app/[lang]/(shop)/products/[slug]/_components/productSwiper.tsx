@@ -1,12 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SwiperCore from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Thumbs } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/thumbs'
+import { Skeleton } from '@/components/ui/skeleton'
 
 interface productSwiperProps {
   productImages: string[]
@@ -14,6 +15,18 @@ interface productSwiperProps {
 
 export default function ProductSwiper({ productImages }: productSwiperProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>()
+  const [didMount, setDidMount] = useState(false)
+
+  useEffect(() => {
+    setDidMount(true)
+  }, [])
+
+  if (!didMount) {
+    return (
+      <div className="md:max-w[550px] w-full max-w-[650px] px-3 min-[450px]:px-5 md:max-w-[450px] md:px-0"></div>
+    )
+  }
+
   return (
     <section className="md:max-w[550px] w-full max-w-[650px] px-3 min-[450px]:px-5 md:max-w-[450px] md:px-0">
       <Swiper

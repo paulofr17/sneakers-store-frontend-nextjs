@@ -54,7 +54,7 @@ export default function ProductSelection({
       })
       .then(() => {
         toast.success(dictionary.productAdded)
-        mutate([`/api/cart/${session.user.userId}`, session.user.token])
+        mutate([`/api/carts/${session.user.userId}`, session.user.token])
       })
       .catch(() => toast.error(dictionary.errorAddingProduct))
       .finally(() => setLoading(false))
