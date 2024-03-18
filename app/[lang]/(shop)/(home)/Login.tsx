@@ -52,20 +52,26 @@ export function Login({ lang, dictionary }: LoginProps) {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <Link href={`/${lang}/account/orders`}>Orders</Link>
+            <Link className="w-full" href={`/${lang}/account/orders`}>
+              Orders
+            </Link>
           </DropdownMenuItem>
           {pathname.startsWith(`/${lang}/admin`) && (
             <DropdownMenuItem>
-              <Link href={`/${lang}`}>Shop</Link>
+              <Link className="w-full" href={`/${lang}`}>
+                Shop
+              </Link>
             </DropdownMenuItem>
           )}
           {session.user?.role === 'admin' && !pathname.startsWith(`/${lang}/admin`) && (
             <DropdownMenuItem>
-              <Link href={`/${lang}/admin`}>Admin</Link>
+              <Link className="w-full" href={`/${lang}/admin`}>
+                Admin
+              </Link>
             </DropdownMenuItem>
           )}
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={() => logout()}>
+          <DropdownMenuItem onClick={() => logout()} className="cursor-pointer">
             <LogOut className="mr-2 h-4 w-4" />
             <span>{dictionary.logout}</span>
           </DropdownMenuItem>

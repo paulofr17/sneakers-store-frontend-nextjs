@@ -53,7 +53,7 @@ export default function CartSlider({ lang, dictionary }: CartSliderProps) {
     await axiosPrivate(session.user.token)
       .delete(`/api/carts/cartItem/${itemId}`)
       .then(() => {
-        mutate([`/api/cart/${session.user.userId}`, session.user.token])
+        mutate([`/api/carts/${session.user.userId}`, session.user.token])
         toast.success(dictionary.productRemoved)
       })
       .catch(() => toast.error(dictionary.errorRemovingProduct))
@@ -71,10 +71,10 @@ export default function CartSlider({ lang, dictionary }: CartSliderProps) {
     await axiosPrivate(session.user.token)
       .post('/api/orders', { userId: session.user.userId })
       .then(() => {
-        mutate([`/api/cart/${session.user.userId}`, session.user.token])
+        mutate([`/api/carts/${session.user.userId}`, session.user.token])
         toast.success(dictionary.orderCreated)
       })
-      .catch(() => toast.error(dictionary.errorCreatingOrder))
+      .catch((error) => toast.error(error.response.data.error))
       .finally(() => {
         setLoading(false)
         setOpen(false)
