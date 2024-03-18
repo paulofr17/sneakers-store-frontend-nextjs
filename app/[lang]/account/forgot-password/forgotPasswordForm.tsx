@@ -1,15 +1,16 @@
 'use client'
 
-import { Locale } from '@/i18n-config'
-import { ForgotPasswordDictionary } from '@/models/dictionary'
-import { useState } from 'react'
-import { Blinker } from '@/components/Loading'
-import toast, { Toaster } from 'react-hot-toast'
 import { redirect, useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
+import { Locale } from '@/i18n-config'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import Link from 'next/link'
+
+import { ForgotPasswordDictionary } from '@/models/dictionary'
+import { Blinker } from '@/components/Loading'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import Link from 'next/link'
 
 interface ForgotPasswordFormProps {
   lang: Locale
@@ -25,10 +26,6 @@ export function ForgotPasswordForm({ lang, dictionary }: ForgotPasswordFormProps
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setIsLoading(true)
-    // await swell.account.recover({
-    //   email,
-    //   reset_url: `${window.location.origin}/${lang}/account/reset-password?key={reset_key}`,
-    // })
     setIsLoading(false)
     toast.success(dictionary.successToastMessage)
     router.push(`/${lang}/signin`)
@@ -76,7 +73,6 @@ export function ForgotPasswordForm({ lang, dictionary }: ForgotPasswordFormProps
             </div>
           </div>
         </div>
-        <Toaster />
       </div>
     )
   }

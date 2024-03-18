@@ -1,23 +1,23 @@
 'use client'
 
-import * as z from 'zod'
-import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { FcGoogle } from 'react-icons/fc'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { signIn, useSession } from 'next-auth/react'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Button } from '@/components/ui/button'
-import toast, { Toaster } from 'react-hot-toast'
-import { FcGoogle } from 'react-icons/fc'
+import { toast } from 'sonner'
+import Link from 'next/link'
+import * as z from 'zod'
 
 import { loginSchema } from '@/lib/schemas/loginSchema'
 import { revalidatePage } from '@/actions/actions'
 import { SignInDictionary } from '@/models/dictionary'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Button } from '@/components/ui/button'
 import { Blinker } from '@/components/Loading'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { Locale } from '@/i18n-config'
 
 type FormData = z.infer<typeof loginSchema>
@@ -160,7 +160,6 @@ export default function SignIn({ lang, dictionary }: SignInProps) {
             </Link>
           </div>
         </div>
-        <Toaster />
       </div>
     )
   }

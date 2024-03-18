@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Thumbs } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/thumbs'
-import { Skeleton } from '@/components/ui/skeleton'
 
 interface productSwiperProps {
   productImages: string[]

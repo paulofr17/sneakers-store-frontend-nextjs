@@ -1,10 +1,10 @@
 'use client'
 
-import toast, { Toaster } from 'react-hot-toast'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useSWRConfig } from 'swr'
 import { useState } from 'react'
+import { toast } from 'sonner'
 
 import { ProductsDictionary } from '@/models/dictionary'
 import { ProductVariant } from '@/models/types'
@@ -92,7 +92,6 @@ export default function ProductSelection({
           {isMutating ? <Blinker /> : dictionary.addToCart}
         </button>
       </form>
-      <Toaster />
     </div>
   )
 }

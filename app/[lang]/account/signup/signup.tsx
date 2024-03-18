@@ -2,7 +2,6 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { signIn, useSession } from 'next-auth/react'
-import toast, { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { FcGoogle } from 'react-icons/fc'
 import { useForm } from 'react-hook-form'
@@ -10,15 +9,16 @@ import { useState } from 'react'
 import Link from 'next/link'
 import * as z from 'zod'
 
-import { SignUpDictionary } from '@/models/dictionary'
 import { registerSchema } from '@/lib/schemas/registerSchema'
+import { SignUpDictionary } from '@/models/dictionary'
+import { revalidatePage } from '@/actions/actions'
 import { Button } from '@/components/ui/button'
 import { Blinker } from '@/components/Loading'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Locale } from '@/i18n-config'
 import axios from '@/lib/axios'
-import { revalidatePage } from '@/actions/actions'
+import { toast } from 'sonner'
 
 type FormData = z.infer<typeof registerSchema>
 
@@ -175,7 +175,6 @@ export default function SignUp({ lang, dictionary }: SignUpProps) {
             </Link>
           </div>
         </div>
-        <Toaster />
       </div>
     )
   }

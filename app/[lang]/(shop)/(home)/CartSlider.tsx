@@ -5,8 +5,8 @@ import Badge from '@mui/material/Badge'
 import { ShoppingBag, X } from 'lucide-react'
 import useSWR, { useSWRConfig } from 'swr'
 import { Fragment, useState } from 'react'
-import toast, { Toaster } from 'react-hot-toast'
 import { useSession } from 'next-auth/react'
+import { toast } from 'sonner'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -242,7 +242,6 @@ export default function CartSlider({ lang, dictionary }: CartSliderProps) {
           </div>
         </Dialog>
       </Transition.Root>
-      <Toaster />
     </div>
   )
 }
