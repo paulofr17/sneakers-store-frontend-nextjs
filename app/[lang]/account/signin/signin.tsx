@@ -44,7 +44,7 @@ export default function SignIn({ lang, dictionary }: SignInProps) {
     signIn('credentials', { email, password, redirect: false })
       .then((res) =>
         res?.ok
-          ? toast.success(dictionary.titleSignin)
+          ? toast.success(dictionary.successToastMessage)
           : toast.error(dictionary.invalidCredentials),
       )
       .catch(() => toast.error('Something went wrong'))
@@ -55,7 +55,8 @@ export default function SignIn({ lang, dictionary }: SignInProps) {
   const { data: _, status } = useSession()
 
   async function googleLogin() {
-    signIn('google', { callbackUrl: `/${lang}` })
+    await signIn('google', { callbackUrl: `/${lang}` })
+    toast.success(dictionary.successToastMessage)
   }
 
   if (status === 'authenticated') {

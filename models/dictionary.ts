@@ -69,6 +69,7 @@ export type SignInDictionary = {
   continueWith: string
   notAmember: string
   createAccount: string
+  successToastMessage: string
   invalidCredentials: string
 }
 
@@ -89,6 +90,7 @@ export type SignUpDictionary = {
   continueWith: string
   alreadyHaveAccount: string
   loginHere: string
+  successToastMessage: string
 }
 
 export type ForgotPasswordDictionary = {

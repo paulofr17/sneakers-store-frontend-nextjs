@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Locale } from '@/i18n-config'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 interface LanguageSelectProps {
@@ -18,6 +18,7 @@ interface LanguageSelectProps {
 
 export function LanguageSelect({ lang }: LanguageSelectProps) {
   const router = useRouter()
+  const pathname = usePathname()
   const [language, setLanguage] = useState(lang)
 
   return (
@@ -25,7 +26,7 @@ export function LanguageSelect({ lang }: LanguageSelectProps) {
       value={language}
       onValueChange={(value: Locale) => {
         setLanguage(value)
-        router.push(`/${value}`)
+        router.push(pathname.replace(/^.{3}/, `/${value}`))
       }}
     >
       <SelectTrigger className="h-8 w-16 border-0 bg-zinc-700 text-white">

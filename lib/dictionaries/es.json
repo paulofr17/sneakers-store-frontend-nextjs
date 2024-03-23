@@ -66,6 +66,7 @@
         "continueWith": "O continuar con",
         "notAmember": "No tienes cuenta? ",
         "createAccount": "Crear una ahora",
+        "successToastMessage": "Inicio de sesión correcto",
         "invalidCredentials": "Credenciales no válidas. Por favor, compruebe su correo electrónico y contraseña."
     },
     "signUp": {
@@ -84,7 +85,8 @@
         "signupButton": "Crear una cuenta",
         "continueWith": "O continuar con",
         "alreadyHaveAccount": "¿Ya tienes cuenta? ",
-        "loginHere": "Iniciar sesión"
+        "loginHere": "Iniciar sesión",
+        "successToastMessage": "Cuenta creada con éxito"
     },
     "forgotPassword": {
         "title": "Contraseña perdida?",

@@ -212,7 +212,7 @@ export default function CartSlider({ lang, dictionary }: CartSliderProps) {
                         <p className="mt-0.5 text-sm text-gray-500">{dictionary.shippinginfo}</p>
                         <div className="mt-6">
                           <button
-                            disabled={loading}
+                            disabled={loading || cart?.cartItems.length === 0}
                             className="flex w-full items-center justify-center rounded-md border border-transparent bg-red-500 px-6 py-3 
                               text-base font-medium text-white shadow-sm hover:bg-red-400 disabled:cursor-not-allowed disabled:opacity-75"
                             onClick={checkout}

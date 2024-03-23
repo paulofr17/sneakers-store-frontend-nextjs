@@ -63,7 +63,7 @@ export function BestSeller({ products, lang }: BestSellerProps) {
           <div className="relative flex h-full w-full flex-col">
             <Link
               href={`/${lang}/products/${product.slug}`}
-              className="relative h-full w-full hover:opacity-60"
+              className="relative aspect-square hover:opacity-60"
             >
               <Image
                 src={product.image}

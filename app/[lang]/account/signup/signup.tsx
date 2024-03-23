@@ -51,14 +51,17 @@ export default function SignUp({ lang, dictionary }: SignUpProps) {
     await axios
       .post(`/api/users/register`, user)
       .then(() =>
-        signIn('credentials', { email: user.email, password: user.password, redirect: false }),
+        signIn('credentials', { email: user.email, password: user.password, redirect: false }).then(
+          () => toast.success(dictionary.successToastMessage),
+        ),
       )
       .catch((err) => toast.error(err.response.data.message))
       .finally(() => setLoading(false))
   }
 
   async function googleLogin() {
-    signIn('google', { callbackUrl: `/${lang}` })
+    await signIn('google', { callbackUrl: `/${lang}` })
+    toast.success(dictionary.successToastMessage)
   }
 
   if (status === 'authenticated') {
@@ -157,15 +160,6 @@ export default function SignUp({ lang, dictionary }: SignUpProps) {
                 <FcGoogle size={24}></FcGoogle>
                 <span className="text-sm font-semibold">Google</span>
               </button>
-              {/* <button
-                className="flex w-full items-center justify-center gap-2 rounded-md bg-rose-500 p-1 text-white decoration-inherit hover:bg-rose-500/70"
-                onClick={() => {
-                  signIn('github', { email: '', password: '', callbackUrl: '/' })
-                }}
-              >
-                <InstagramIcon size={24}></InstagramIcon>
-                <span className="text-sm font-semibold">Instagram</span>
-              </button> */}
             </div>
           </div>
           <div className="mx-auto mt-4 text-sm">

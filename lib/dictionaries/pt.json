@@ -66,6 +66,7 @@
         "continueWith": "Ou continuar com",
         "notAmember": "Não tem uma conta? ",
         "createAccount": "Criar agora",
+        "successToastMessage": "Sessão iniciada com sucesso",
         "invalidCredentials": "Dados inválidos. Por favor verifique o seu e-mail e palavra-passe."
     },
     "signUp": {
@@ -83,8 +84,9 @@
         "invalidPassword": "Palavra-passe deve ter pelo menos 8 caracteres",
         "signupButton": "Criar conta",
         "continueWith": "Ou continuar com",
-        "alreadyHaveAccount": "Já tem uma conta? ",
-        "loginHere": "Iniciar sessão"
+        "alreadyHaveAccount": "Já tem uma conta?",
+        "loginHere": "Iniciar sessão",
+        "successToastMessage": "Conta criada com sucesso"
     },
     "forgotPassword": {
         "title": "Recuperar a palavra-passe",

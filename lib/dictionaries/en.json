@@ -66,6 +66,7 @@
         "continueWith": "Or continue with",
         "notAmember": "Not a member? ",
         "createAccount": "Create an account",
+        "successToastMessage": "Logged in successfully",
         "invalidCredentials": "Invalid credentials. Please check your email and password."
     },
     "signUp": {
@@ -84,7 +85,8 @@
         "signupButton": "Sign Up",
         "continueWith": "Or continue with",
         "alreadyHaveAccount": "Already have an account? ",
-        "loginHere": "Login here"
+        "loginHere": "Login here",
+        "successToastMessage": "Account created successfully"
     },
     "forgotPassword": {
         "title": "Forgot Password",
