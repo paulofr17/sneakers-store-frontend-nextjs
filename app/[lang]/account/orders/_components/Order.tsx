@@ -6,13 +6,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { OrdersDictionary } from '@/models/dictionary'
-import { Order } from '@/models/types'
+import { Order as OrderType } from '@/models/types'
 import { Button } from '@/components/ui/button'
 import { formatCurrency } from '@/lib/utils'
 import { Locale } from '@/i18n-config'
 
 interface OrderItemProps {
-  order: Order
+  order: OrderType
   dictionary: OrdersDictionary
   lang: Locale
 }
