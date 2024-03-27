@@ -31,7 +31,12 @@ const FileArraySchema = z
 // })
 
 const VariantSchema = z.object({
-  slug: z.string().min(5, { message: 'Slug must be 5 or more characters long' }),
+  slug: z
+    .string()
+    .min(5, { message: 'Slug must be 5 or more characters long' })
+    .refine((value) => value === value.toLowerCase(), {
+      message: 'Slug must be in lower case',
+    }),
   color: z.string({ required_error: 'Please enter color' }),
   sizes: z.array(z.string()).min(1, 'Please select at least one size'),
   preview_image: z.string().optional(),

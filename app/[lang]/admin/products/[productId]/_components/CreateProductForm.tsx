@@ -100,7 +100,7 @@ export function CreateProductForm({
           images: [],
           sizes: [],
           slug: form.getValues('name')
-            ? form.getValues('name').replaceAll(' ', '-').toLowerCase() + `-${color}`
+            ? `${form.getValues('name').replaceAll(' ', '-')}-${color}`.toLowerCase()
             : '',
         })
       }
@@ -172,9 +172,7 @@ export function CreateProductForm({
                         if (variant.slug === '') {
                           update(index, {
                             ...form.getValues('variants')[index],
-                            slug:
-                              event.target.value.replaceAll(' ', '-').toLowerCase() +
-                              `-${variant.color}`,
+                            slug: `${event.target.value.replaceAll(' ', '-')}-${variant.color}`.toLowerCase(),
                           })
                         }
                       })
