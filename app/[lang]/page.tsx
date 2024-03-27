@@ -24,8 +24,8 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
     .catch(() => [])
 
   return (
-    <div className="flex flex-col gap-y-4 sm:gap-y-8 md:gap-y-10 xl:gap-y-12">
-      <div className="relative mx-auto flex h-[450px] w-[calc(100vw_-_24px)] max-w-[1720px] justify-center text-center lg:h-[550px] lg:w-[calc(100vw_-_217px)]">
+    <div className="flex flex-col gap-y-8 px-2 sm:gap-y-12 md:gap-y-16 lg:px-[100px] xl:gap-y-20">
+      <div className="relative mx-auto flex aspect-video h-full max-h-[700px] w-full max-w-[1720px] justify-center text-center">
         <Image
           src={mainImage.src}
           alt="Sneakers Store"
@@ -34,7 +34,7 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
           fill
           priority
         />
-        <div className="z-0 mt-20 flex items-center">
+        <div className="absolute top-1/2 z-0 flex">
           <Link
             href={`${params.lang}/products`}
             className="rounded-xl border border-zinc-200 p-2 text-white transition hover:bg-zinc-500 hover:font-semibold"
@@ -43,28 +43,28 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
           </Link>
         </div>
       </div>
-      <div className="mb-8 mt-8 flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <span className="text-3xl font-semibold tracking-[0.05em]">
           {dictionary.home.bestSellers}
         </span>
         <Suspense fallback={<HomeProductSkeleton />}>
           <Await promise={bestSellersProducts}>
             {(bestSellersProducts) => (
-              <div className="mt-6 h-[250px] w-[calc(100vw_-_24px)] max-w-[1720px] min-[500px]:h-[300px] sm:h-[350px] md:h-[350px] lg:w-[calc(100vw_-_217px)]">
+              <div className="w-full">
                 <HomeProductSwiper products={bestSellersProducts} lang={params.lang} />
               </div>
             )}
           </Await>
         </Suspense>
       </div>
-      <div className="mb-8 mt-8 flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <span className="text-3xl font-semibold tracking-[0.05em]">
           {dictionary.home.newProducts}
         </span>
         <Suspense fallback={<HomeProductSkeleton />}>
           <Await promise={newArrivalsProducts}>
             {(newArrivalsProducts) => (
-              <div className="mt-6 h-[250px] w-[calc(100vw_-_24px)] max-w-[1720px] min-[500px]:h-[300px] sm:h-[350px] md:h-[350px] lg:w-[calc(100vw_-_217px)]">
+              <div className="w-full">
                 <HomeProductSwiper products={newArrivalsProducts} lang={params.lang} />
               </div>
             )}
