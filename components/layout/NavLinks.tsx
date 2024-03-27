@@ -1,6 +1,6 @@
 'use client'
 
-import { HoverDropdown } from '@/app/[lang]/(shop)/(home)/HoverDropdown'
+import { HoverDropdown } from '@/app/[lang]/_components/HoverDropdown'
 import { Locale } from '@/i18n-config'
 import { HomeDictionary } from '@/models/dictionary'
 import Link from 'next/link'

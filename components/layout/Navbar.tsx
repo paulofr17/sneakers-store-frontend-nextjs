@@ -1,10 +1,9 @@
 import axios from '@/lib/axios'
 import Link from 'next/link'
 import Image from 'next/image'
-import { InstagramIcon } from 'lucide-react'
 
-import { Login } from '@/app/[lang]/(shop)/(home)/Login'
-import CartSlider from '@/app/[lang]/(shop)/(home)/CartSlider'
+import { Login } from '@/app/[lang]/_components/Login'
+import CartSlider from '@/app/[lang]/_components/CartSlider'
 import { Dictionary } from '@/models/dictionary'
 import { LanguageSelect } from '@/components/layout/LanguageSelect'
 import SideBar from '@/components/layout/Sidebar'

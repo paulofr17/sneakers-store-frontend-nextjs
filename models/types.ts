@@ -25,7 +25,7 @@ export type Product = {
   variants: ProductVariant[]
 }
 
-export type BestSellerProduct = {
+export type HomePageProduct = {
   id: number
   name: string
   slug: string

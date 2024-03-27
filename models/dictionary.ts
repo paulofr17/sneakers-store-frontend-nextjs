@@ -8,9 +8,11 @@ export type HomeDictionary = {
   search: string
   shopNow: string
   bestSellers: string
+  newProducts: string
   testimonials: string
   login: string
   register: string
+  orders: string
   logout: string
   footerText: string
 }

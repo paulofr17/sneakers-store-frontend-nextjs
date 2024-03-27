@@ -9,9 +9,11 @@
         "search": "Buscar",
         "shopNow": "Comprar Ahora",
         "bestSellers": "Los Más Vendidos",
+        "newProducts": "Novedades",
         "testimonials": "Testimonios",
         "login": "Iniciar sesión",
         "register": "Crear cuenta",
+        "orders": "Historial de pedidos",
         "logout": "Cerrar sesión",
         "footerText": "© 2024 Sneakers Store. Todos los derechos reservados."
     },

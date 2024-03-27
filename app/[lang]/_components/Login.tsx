@@ -53,13 +53,13 @@ export function Login({ lang, dictionary }: LoginProps) {
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <Link className="w-full" href={`/${lang}/account/orders`}>
-              Orders
+              {dictionary.orders}
             </Link>
           </DropdownMenuItem>
           {pathname.startsWith(`/${lang}/admin`) && (
             <DropdownMenuItem>
               <Link className="w-full" href={`/${lang}`}>
-                Shop
+                {dictionary.shop}
               </Link>
             </DropdownMenuItem>
           )}

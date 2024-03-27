@@ -1,6 +1,6 @@
 import { Skeleton } from '@/components/ui/skeleton'
 
-export default function BestSellerSkeleton() {
+export default function HomeProductSkeleton() {
   return (
     <div className="mt-6 h-[250px] w-[calc(100vw_-_24px)] max-w-[1720px] overflow-hidden min-[500px]:h-[300px] sm:h-[350px] md:h-[350px] lg:w-[calc(100vw_-_217px)]">
       <div className="grid h-full w-full grid-cols-2 gap-[10px] overflow-hidden md:grid-cols-3 min-[1250px]:grid-cols-4 min-[1350px]:grid-cols-5">

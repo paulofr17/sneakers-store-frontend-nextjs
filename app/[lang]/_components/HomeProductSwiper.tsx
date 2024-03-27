@@ -10,15 +10,15 @@ import 'swiper/css/pagination'
 
 import { formatCurrency } from '@/lib/utils'
 import { Locale } from '@/i18n-config'
-import { BestSellerProduct } from '@/models/types'
+import { HomePageProduct } from '@/models/types'
 import { useEffect, useState } from 'react'
 
-interface BestSellerProps {
-  products: BestSellerProduct[]
+interface HomeProductSwiperProps {
+  products: HomePageProduct[]
   lang: Locale
 }
 
-export function BestSeller({ products, lang }: BestSellerProps) {
+export function HomeProductSwiper({ products, lang }: HomeProductSwiperProps) {
   const [didMount, setDidMount] = useState(false)
 
   useEffect(() => {
