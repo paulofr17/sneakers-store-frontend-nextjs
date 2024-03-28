@@ -70,6 +70,7 @@ export default function ProductSwiper({ productImages }: productSwiperProps) {
                 alt=""
                 className="block h-full w-full rounded-md object-cover"
                 sizes="(min-width: 780px) 107px, (min-width: 700px) 147px, (min-width: 520px) calc(20.63vw + 7px), (min-width: 440px) calc(10vw + 54px), (min-width: 340px) calc(18.75vw + 9px), calc(-1040vw + 3396px)"
+                priority={true}
                 fill
               />
             </button>

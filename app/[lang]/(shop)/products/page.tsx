@@ -27,19 +27,12 @@ export default async function Products({
   searchParams.category = searchParams.brand
   const dictionary: Dictionary = await getDictionary(params.lang)
   const categories: string[] = await axios.get(`/api/categories`).then((res) => res.data || [])
-  // const wait = () => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(resolve, 50000)
-  //   })
-  // }
+
   const products: Promise<ProductType[]> = axios
     .get(`/api/products`, {
       params: searchParams,
     })
-    .then(async (res) => {
-      // await wait()
-      return res.data || []
-    })
+    .then(async (res) => res.data || [])
 
   return (
     <div className="flex flex-col gap-6 px-3 sm:flex-row">

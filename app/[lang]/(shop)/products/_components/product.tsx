@@ -53,7 +53,7 @@ export default function Product({ product, lang }: productProps) {
           </div>
         )}
 
-        <div className="flex justify-between gap-[2px] text-xs text-gray-500 lg:text-sm xl:text-base">
+        <div className="mt-auto flex justify-between gap-[2px] text-xs text-gray-500 lg:text-sm xl:text-base">
           <span className="line-clamp-2 font-medium">{product.name}</span>
           <span className="font-semibold text-gray-700">
             {formatCurrency({ amount: product.price || 0 })}
