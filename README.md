@@ -15,7 +15,7 @@ Explore the latest trends in footwear with our Sneakers Store website repository
 
 <!-- License -->
 ## License
-Licensed under the [MIT license](https://github.com/paulofr17/task-manager/blob/master/LICENSE).
+Licensed under the [MIT license](https://github.com/paulofr17/sneakers-store-frontend-nextjs/blob/main/LICENSE).
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
