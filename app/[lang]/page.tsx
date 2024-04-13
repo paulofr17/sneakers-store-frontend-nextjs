@@ -34,10 +34,10 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
           fill
           priority
         />
-        <div className="absolute top-1/2 z-0 flex">
+        <div className="absolute top-[52%] z-0 flex">
           <Link
             href={`${params.lang}/products`}
-            className="rounded-xl border border-zinc-200 p-2 text-white transition hover:bg-zinc-500 hover:font-semibold"
+            className="rounded-lg border-2 border-white bg-zinc-500/70 p-1 px-8 text-sm font-semibold text-white shadow-2xl transition hover:font-bold sm:p-2 sm:text-base lg:text-lg"
           >
             {dictionary.home.shopNow}
           </Link>
