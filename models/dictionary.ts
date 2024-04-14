@@ -39,6 +39,7 @@ export type ProductsDictionary = {
   size: string
   addToCart: string
   productAdded: string
+  loginRequired: string
   errorAddingProduct: string
 }
 

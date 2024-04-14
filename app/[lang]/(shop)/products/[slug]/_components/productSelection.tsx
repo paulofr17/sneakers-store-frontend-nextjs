@@ -2,15 +2,15 @@
 
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { useSWRConfig } from 'swr'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import { useSWRConfig } from 'swr'
 
+import { Blinker } from '@/components/Loading'
+import { Locale } from '@/i18n-config'
+import { axiosPrivate } from '@/lib/axios'
 import { ProductsDictionary } from '@/models/dictionary'
 import { ProductVariant } from '@/models/types'
-import { Blinker } from '@/components/Loading'
-import { axiosPrivate } from '@/lib/axios'
-import { Locale } from '@/i18n-config'
 
 interface productSelectionProps {
   lang: Locale
@@ -43,6 +43,7 @@ export default function ProductSelection({
     const product = selectedVariant.product_stock.find((product) => product.size === selectedSize)
     if (!product || !session) {
       setLoading(false)
+      !session ? toast.error(dictionary.loginRequired) : toast.error(dictionary.errorAddingProduct)
       return router.push(`/${lang}/account/signin`)
     }
 

@@ -38,6 +38,7 @@
         "size": "Tamanho",
         "addToCart": "Adicionar ao carrinho",
         "productAdded": "Produto adicionado ao carrinho",
+        "loginRequired": "É necessário iniciar sessão para adicionar produtos ao carrinho",
         "errorAddingProduct": "Erro ao adicionar produto ao carrinho"
     },
     "faq": {
