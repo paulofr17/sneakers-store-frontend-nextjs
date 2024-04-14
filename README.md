@@ -11,6 +11,7 @@ Explore the latest trends in footwear with our Sneakers Store website repository
 - **Dashboard**: An interactive dashboard provides admins with valuable insights into product trends and order metrics, including the evolution of product inventory over time and the number of orders placed within selected time periods.
 
 <!-- DEMO -->
+## Demo
 ![Sneakers Store Demo](.github/demo.gif)
 
 <!-- ROADMAP -->
