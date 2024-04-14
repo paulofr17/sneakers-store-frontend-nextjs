@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     params.lang === 'en'
       ? 'Forgot Password'
       : params.lang === 'pt'
-      ? 'Palavra-passe perdida'
-      : 'Contraseña olvidada'
+        ? 'Palavra-passe perdida'
+        : 'Contraseña olvidada'
   return {
     title: pageTitle + ' | Sneakers Store',
   }

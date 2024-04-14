@@ -1,9 +1,13 @@
 'use client'
 
 import { Check, ChevronsUpDown } from 'lucide-react'
-import { useForm, useWatch } from 'react-hook-form'
 import { useState } from 'react'
+import { useForm, useWatch } from 'react-hook-form'
 
+import { updateStock } from '@/actions/ManageStock/action'
+import { ManageStockType } from '@/actions/ManageStock/schema'
+import { Blinker } from '@/components/Loading'
+import { Button } from '@/components/ui/button'
 import {
   Command,
   CommandEmpty,
@@ -11,7 +15,6 @@ import {
   CommandInput,
   CommandItem,
 } from '@/components/ui/command'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import {
   Dialog,
   DialogContent,
@@ -20,15 +23,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Product, ProductVariant } from '@/models/types'
-import { ManageStockType } from '@/actions/ManageStock/schema'
-import { updateStock } from '@/actions/ManageStock/action'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
+import { Product, ProductVariant } from '@/models/types'
 import { toast } from 'sonner'
-import { Blinker } from '@/components/Loading'
 
 interface ManageStockProps {
   products: Product[]
@@ -96,7 +96,7 @@ export function ManageStock({ products }: ManageStockProps) {
             <Command>
               <CommandInput placeholder="Search product..." />
               <CommandEmpty>No product found.</CommandEmpty>
-              <CommandGroup>
+              <CommandGroup className="max-h-80 overflow-auto">
                 {productVariants.map((product) => (
                   <CommandItem
                     key={product.value}

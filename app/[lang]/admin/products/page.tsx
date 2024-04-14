@@ -3,10 +3,16 @@ import Link from 'next/link'
 
 import { ProductsTable } from '@/app/[lang]/admin/products/_components/ProductsTable'
 import { Button } from '@/components/ui/button'
-import { Product } from '@/models/types'
 import { Locale } from '@/i18n-config'
 import axios from '@/lib/axios'
+import { Product } from '@/models/types'
 import { ManageStock } from './_components/ManageStock'
+
+export async function generateMetadata() {
+  return {
+    title: 'Products | Sneakers Store',
+  }
+}
 
 export default async function ProductsPage({ params }: { params: { lang: Locale } }) {
   const products: Product[] = await axios.get(`/api/products`).then((res) => res.data)

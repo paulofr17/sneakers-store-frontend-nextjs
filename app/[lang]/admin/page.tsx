@@ -1,7 +1,13 @@
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { CalendarPicker } from './_components/CalendarPicker'
-import { Dashboard } from '@/models/types'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import axios from '@/lib/axios'
+import { Dashboard } from '@/models/types'
+import { CalendarPicker } from './_components/CalendarPicker'
+
+export async function generateMetadata() {
+  return {
+    title: 'Admin Dashboard | Sneakers Store',
+  }
+}
 
 export default async function AdminPage({
   searchParams,

@@ -1,16 +1,16 @@
 'use client'
 
-import { redirect, useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
 import { Locale } from '@/i18n-config'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
+import { redirect, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
-import Link from 'next/link'
 
-import { ForgotPasswordDictionary } from '@/models/dictionary'
 import { Blinker } from '@/components/Loading'
-import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { ForgotPasswordDictionary } from '@/models/dictionary'
 
 interface ForgotPasswordFormProps {
   lang: Locale
@@ -28,7 +28,7 @@ export function ForgotPasswordForm({ lang, dictionary }: ForgotPasswordFormProps
     setIsLoading(true)
     setIsLoading(false)
     toast.success(dictionary.successToastMessage)
-    router.push(`/${lang}/signin`)
+    router.push(`/${lang}/account/signin`)
   }
 
   if (status === 'authenticated') {
