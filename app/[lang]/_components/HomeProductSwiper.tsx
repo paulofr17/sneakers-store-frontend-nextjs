@@ -2,14 +2,14 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { formatCurrency } from '@/lib/utils'
 import { Locale } from '@/i18n-config'
+import { formatCurrency } from '@/lib/utils'
 import { HomePageProduct } from '@/models/types'
 import { useEffect, useState } from 'react'
 
@@ -68,7 +68,7 @@ export function HomeProductSwiper({ products, lang }: HomeProductSwiperProps) {
               <Image
                 src={product.image}
                 alt=""
-                loading="lazy"
+                priority={true}
                 className="relative rounded-md object-cover"
                 sizes="(min-width: 2040px) 336px, (min-width: 1380px) calc(17.34vw - 14px), (min-width: 1280px) calc(18.75vw + 18px), (min-width: 1060px) calc(30vw - 44px), (min-width: 780px) 30.77vw, (min-width: 400px) calc(49.17vw - 11px), calc(100vw - 24px)"
                 fill

@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import SwiperCore from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Thumbs } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/thumbs'
+import { Thumbs } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface productSwiperProps {
   productImages: string[]
@@ -46,6 +46,7 @@ export default function ProductSwiper({ productImages }: productSwiperProps) {
                 className="block h-full w-full rounded-md object-cover"
                 sizes="(min-width: 780px) 450px, (min-width: 700px) 610px, (min-width: 520px) calc(81.25vw + 58px), (min-width: 440px) calc(40vw + 240px), calc(83.33vw + 26px)"
                 fill
+                priority={true}
               />
             </div>
           </SwiperSlide>
